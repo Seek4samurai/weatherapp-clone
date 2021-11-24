@@ -37,7 +37,8 @@ html {
   border-radius: 0.5rem;
   -webkit-box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
-  background: #ca57f8;
+  background-color: #4158d0;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
   position: relative;
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -61,7 +62,7 @@ html {
 
 .content .fa-sun {
   position: absolute;
-  top: 10%;
+  top: 20%;
 }
 
 .content .info {
@@ -80,6 +81,10 @@ html {
           align-items: center;
   font-size: medium;
   z-index: 3;
+}
+
+.content .info .location {
+  padding: 1rem 0;
 }
 
 .content .info p {
