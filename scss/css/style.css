@@ -30,4 +30,111 @@ body {
 html {
   background: #eee;
 }
+
+.box {
+  width: 20vw;
+  height: 60vh;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+  background: #ca57f8;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  min-width: 20rem;
+  min-height: 35rem;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .fa-sun {
+  position: absolute;
+  top: 10%;
+}
+
+.content .info {
+  color: #363636;
+  position: absolute;
+  top: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: medium;
+  z-index: 3;
+}
+
+.content .info p {
+  padding: 1rem 0;
+}
+
+.content .info .temp {
+  padding: 1rem 0;
+}
+
+#weather-con {
+  height: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+}
+
+#weather-con .fas {
+  font-size: 6rem;
+  -webkit-animation: fas-animation 3s linear infinite alternate;
+          animation: fas-animation 3s linear infinite alternate;
+}
+
+@-webkit-keyframes fas-animation {
+  from {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes fas-animation {
+  from {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 1118px) {
+  .tempminmax {
+    font-size: small;
+  }
+}
 /*# sourceMappingURL=style.css.map */
