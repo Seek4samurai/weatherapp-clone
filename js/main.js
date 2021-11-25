@@ -25,7 +25,7 @@ const getCurrentTime = () => {
     ]
     var now = new Date();
     var month = months[now.getMonth()];
-    var date = now.getDay();
+    var date = now.getDate();
     let hours = now.getHours();
     let minutes = now.getMinutes();
     return `${month} ${date} | ${hours}:${minutes}`;
