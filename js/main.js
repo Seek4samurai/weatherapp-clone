@@ -3,13 +3,15 @@ let weatherCon = document.getElementById("weather-con");
 
 const tempStatus = "{%status%}";
 if (tempStatus == "Sunny") {
-    weatherCon.innerHTML = "<i class='fas fa-sun' style='color': '#f1c40f;'></i>";
+    weatherCon.innerHTML = "<i class='fas fa-sun' style='color: #f1c40f;'></i>";
 } else if (tempStatus == "Clouds") {
-    weatherCon.innerHTML = "<i class='fas fa-cloud' style='color': '#f1f2f6;'></i>";
+    weatherCon.innerHTML = "<i class='fas fa-cloud' style='color: #f1c40f;'></i>";
 } else if (tempStatus == "Rainy") {
-    weatherCon.innerHTML = "<i class='fas fa-rain' style='color': '#a4b0be;'></i>";
+    weatherCon.innerHTML = "<i class='fas fa-rain' style='color: #f1c40f;'></i>";
+} else if (tempStatus == "Clear") {
+    weatherCon.innerHTML = "<i class='fas fa-sun' style='color: #f1c40f;'></i>";
 } else {
-    weatherCon.innerHTML = "<i class='fas fa-cloud' style='color': '#44c3de;'></i>";
+    weatherCon.innerHTML = "<i class='fas fa-cloud' style='color: #f1c40f;'></i>";
 }
 
 const getCurrentDate = () => {

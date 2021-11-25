@@ -1,3 +1,4 @@
+const path = require("path")
 const http = require("http");
 const fs = require("fs");
 var requests = require('requests');
@@ -11,10 +12,10 @@ const replaceVal = (tempVal, orgVal) => {
     temperature = temperature.replace("{%status%}", orgVal.current.condition.text);
     return temperature;
 }
-const homeFile = fs.readFileSync("../index.html", "utf-8");
+const homeFile = fs.readFileSync(path.join(__dirname, "../index.html"), "utf-8");
 const server = http.createServer((req, res) => {
     if (req.url == "/") {
-        requests('http://api.weatherapi.com/v1/current.json?key=65c7d334fcc24050b90110304212511 &q=Indore&aqi=yes')
+        requests('http://api.weatherapi.com/v1/current.json?key=65c7d334fcc24050b90110304212511&q=Indore&aqi=yes')
             .on('data', (chunk) => {
                 const objData = JSON.parse(chunk);
                 const arrData = [objData];
