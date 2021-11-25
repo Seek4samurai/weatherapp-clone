@@ -1,6 +1,3 @@
-// 642770685bdcd8589f38bd529da3e040
-// api.openweathermap.org / data / 2.5 / weather ? q = indore & appid=642770685bdcd8589f38bd529da3e040
-
 const curDate = document.getElementById("date");
 let weatherCon = document.getElementById("weather-con");
 

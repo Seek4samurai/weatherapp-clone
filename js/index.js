@@ -3,23 +3,23 @@ const fs = require("fs");
 var requests = require('requests');
 
 const replaceVal = (tempVal, orgVal) => {
-    let temperature = tempVal.replace("{%Tempval%}", orgVal.main.temp);
-    temperature = temperature.replace("{%TempMin%}", orgVal.main.temp_min);
-    temperature = temperature.replace("{%TempMax%}", orgVal.main.temp_max);
-    temperature = temperature.replace("{%loc%}", orgVal.name);
-    temperature = temperature.replace("{%country%}", orgVal.sys.country);
-    temperature = temperature.replace("{%status%}", orgVal.weather[0].main);
+    let temperature = tempVal.replace("{%tempVal%}", orgVal.current.temp_c);
+    temperature = temperature.replace("{%lat%}", orgVal.location.lat);
+    temperature = temperature.replace("{%lon%}", orgVal.location.lon);
+    temperature = temperature.replace("{%loc%}", orgVal.location.name);
+    temperature = temperature.replace("{%country%}", orgVal.location.country);
+    temperature = temperature.replace("{%status%}", orgVal.current.condition);
     return temperature;
 }
 const homeFile = fs.readFileSync("../index.html", "utf-8");
 const server = http.createServer((req, res) => {
     if (req.url == "/") {
-        requests('http://api.openweathermap.org/data/2.5/weather?q=Pune&appid=642770685bdcd8589f38bd529da3e040')
+        requests('http://api.weatherapi.com/v1/current.json?key=65c7d334fcc24050b90110304212511 &q=Indore&aqi=yes')
             .on('data', (chunk) => {
                 const objData = JSON.parse(chunk);
                 const arrData = [objData];
                 // console.log(arrData[0].main.temp)
-                const realtimeData = arrData.map((val) => replaceVal(homeFile, val)).join("");
+                const realtimeData = arrData.map((val) => replaceVal(homeFile, val)).join(" ");
                 res.write(realtimeData);
                 // console.log(realtimeData);
             })
