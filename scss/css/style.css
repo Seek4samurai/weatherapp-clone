@@ -65,6 +65,16 @@ html {
   top: 20%;
 }
 
+.content .fa-cloud {
+  position: absolute;
+  top: 20%;
+}
+
+.content .fa-rain {
+  position: absolute;
+  top: 20%;
+}
+
 .content .info {
   color: #363636;
   position: absolute;

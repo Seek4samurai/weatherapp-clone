@@ -8,7 +8,7 @@ const replaceVal = (tempVal, orgVal) => {
     temperature = temperature.replace("{%lon%}", orgVal.location.lon);
     temperature = temperature.replace("{%loc%}", orgVal.location.name);
     temperature = temperature.replace("{%country%}", orgVal.location.country);
-    temperature = temperature.replace("{%status%}", orgVal.current.condition);
+    temperature = temperature.replace("{%status%}", orgVal.current.condition.text);
     return temperature;
 }
 const homeFile = fs.readFileSync("../index.html", "utf-8");
