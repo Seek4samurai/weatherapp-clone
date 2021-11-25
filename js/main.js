@@ -4,7 +4,17 @@
 const curDate = document.getElementById("date");
 let weatherCon = document.getElementById("weather-con");
 
-const tempStatus = "Clouds";
+const tempStatus = "{%status%}";
+if (tempStatus == "Sunny") {
+    weatherCon.innerHTML = "<i class='fas fa - sun' style='color': '#f1c40f;'></i>";
+} else if (tempStatus == "Clouds") {
+    weatherCon.innerHTML = "<i class='fas fa - cloud' style='color': '#f1f2f6;'></i>";
+} else if (tempStatus == "Rainy") {
+    weatherCon.innerHTML = "<i class='fas fa - rain' style='color': '#a4b0be;'></i>";
+} else {
+    weatherCon.innerHTML = "<i class='fas fa - cloud' style='color': '#44c3de;'></i>";
+}
+
 const getCurrentDate = () => {
     const weekday = new Array(7);
     weekday[0] = "Sun";
